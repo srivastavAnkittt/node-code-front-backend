@@ -10,6 +10,6 @@ app.post('/register' ,async (req, resp) => {
     const userData = users(req.body);
     const result = await userData.save();
     resp.send(result)
-})
-
-app.listen(3007);
+});
+// ankitt
+app.listen(5000);
