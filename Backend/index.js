@@ -11,5 +11,5 @@ app.post('/register' ,async (req, resp) => {
     const result = await userData.save();
     resp.send(result)
 });
-// ankitt
+
 app.listen(5000);
