@@ -11,7 +11,7 @@ const Nav = () =>{
     }
     return(
         <div>
-            <ul className="nav">
+            <ul className="nav add">
                 <li>
                     <Link to="/">Home</Link>
                 </li>
