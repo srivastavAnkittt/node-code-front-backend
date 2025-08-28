@@ -15,6 +15,7 @@ app.post("/register", async (req, resp) => {
   delete result.password;
   resp.send(result);
   console.log(result);
+  // helllo data
 });
 
 app.post("/add-product", async (req, resp) => {
