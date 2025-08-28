@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-const Nav = () =>{
+const Nav = () => {
     let user = localStorage.getItem('user')
     const navigate = useNavigate()
     const logOut = () => {
@@ -9,31 +9,37 @@ const Nav = () =>{
         navigate('/register')
         console.warn('logout');
     }
-    return(
+    return (
         <div>
-            <ul className="nav add">
+            {user ? <ul className="nav add">
                 <li>
                     <Link to="/">Home</Link>
                 </li>
-                 <li>
+                <li>
                     <Link to="/product">Product</Link>
                 </li>
-                 <li>
+                <li>
                     <Link to="/add">Add Product</Link>
                 </li>
-                 <li>
+                <li>
                     <Link to="/update">Update Product</Link>
                 </li>
-                 {/* <li>
-                   
-                </li> */}
-                 <li>
+
+                <li>
                     <Link to="/profile">Profile</Link>
                 </li>
-                 <li>
-                   { user ?  <Link to="/register" onClick={logOut}>Logout</Link> : <Link to="/register">Register</Link> } 
+                <li>
+                    <Link to="/register" onClick={logOut}>Logout</Link>
                 </li>
             </ul>
+                : <ul className="nav add right-menu">
+                    <li>
+                        <> <Link to="/register">Register</Link>
+                            <Link to="/login">Login</Link>
+                        </>
+                    </li>
+                </ul>
+            }
         </div>
     )
 }

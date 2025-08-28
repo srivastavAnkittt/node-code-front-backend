@@ -14,7 +14,7 @@ useEffect(()=>{
     if (user){
         navigate('/')
     }
-})
+},[])
     const handleSubmit = async () => {
         let responce = await fetch('http://localhost:3007/register', {
             method: 'POST',
